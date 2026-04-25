@@ -66,7 +66,6 @@ const loadPage = (url, outputDir = process.cwd()) => {
           });
       });
 
-      // 👇 ВОТ ЗДЕСЬ Listr (замена Promise.all)
       const tasks = new Listr([
         {
           title: 'Downloading resources',
