@@ -1,5 +1,22 @@
 import path from 'path';
 
+const normalizeName = (url) => {
+  const { hostname, pathname } = new URL(url);
+
+  const name = `${hostname}${pathname}`
+    .replace(/[^a-zA-Z0-9]/g, '-');
+
+  return name;
+};
+
+export const getHtmlFilename = (url) => (
+  `${normalizeName(url)}.html`
+);
+
+export const getAssetsDirname = (url) => (
+  `${normalizeName(url)}_files`
+);
+
 export const getAssetFilename = (url) => {
   const { hostname, pathname } = url;
 
@@ -11,11 +28,3 @@ export const getAssetFilename = (url) => {
 
   return `${name}${ext}`;
 };
-
-export const getHtmlFilename = (url) => (
-  `${normalizeName(url)}.html`
-);
-
-export const getAssetsDirname = (url) => (
-  `${normalizeName(url)}_files`
-);
