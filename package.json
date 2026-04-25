@@ -2,8 +2,8 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "main": "code/index.js",
-  "exports": "./code/index.js",
+  "main": "index.js",
+  "exports": "./index.js",
   "bin": {
     "page-loader": "bin/page-loader.js"
   },
