@@ -53,6 +53,8 @@ test('downloads resources and rewrites html', async () => {
 
   const content = await fs.readFile(filepath, 'utf-8')
 
+  expect(content).toBe(expectedHtml)
+
   expect(content).toContain('example-com_files')
 
   expect(scope.isDone()).toBe(true)
