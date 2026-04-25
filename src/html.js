@@ -1,5 +1,3 @@
-import * as cheerio from 'cheerio'
-
 const tags = [
   { tag: 'img', attr: 'src' },
   { tag: 'script', attr: 'src' },

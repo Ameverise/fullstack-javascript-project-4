@@ -61,7 +61,7 @@ const loadPage = (url, outputDir = process.cwd()) => {
         return axios.get(assetUrl, {
           responseType: isHtml ? 'text' : 'arraybuffer',
         })
-          .then((res) => fs.writeFile(filepath, res.data))
+          .then(res => fs.writeFile(filepath, res.data))
           .then(() => {
             $(resource.element).attr(
               resource.attr,
@@ -69,7 +69,7 @@ const loadPage = (url, outputDir = process.cwd()) => {
             )
           })
           .catch((error) => {
-            log(`resource skipped: ${assetUrl}`, error.message);
+            log(`resource skipped: ${assetUrl}`, error.message)
           })
       })
 
@@ -86,7 +86,7 @@ const loadPage = (url, outputDir = process.cwd()) => {
         .then(() => $.html())
     })
 
-    .then((html) => fs.writeFile(htmlPath, html))
+    .then(html => fs.writeFile(htmlPath, html))
 
     .then(() => {
       log('page saved:', htmlPath)
