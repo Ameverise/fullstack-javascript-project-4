@@ -26,7 +26,8 @@ const loadPage = (url, outputDir = process.cwd()) => {
   const htmlPath = path.join(outputDir, htmlFilename);
   const assetsPath = path.join(outputDir, assetsDirname);
 
-  return axios.get(url)
+return fs.access(outputDir)
+    .then(() => axios.get(url))
 
     .then((response) => {
       log('html loaded');
