@@ -55,8 +55,8 @@ const loadPage = (url, outputDir = process.cwd()) => {
 
         const isHtml
           = resource.url.pathname.endsWith('.html')
-         || resource.url.pathname === ''
-          || !path.extname(resource.url.pathname)
+          || resource.url.pathname === ''
+       || !path.extname(resource.url.pathname)
 
         return axios.get(assetUrl, {
           responseType: isHtml ? 'text' : 'arraybuffer',
