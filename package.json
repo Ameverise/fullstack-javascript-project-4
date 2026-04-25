@@ -17,6 +17,7 @@
     "listr2": "^10.2.1"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
     "jest": "^30.3.0",
     "nock": "^14.0.13"
   }
