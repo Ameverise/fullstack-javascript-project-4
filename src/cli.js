@@ -1,8 +1,8 @@
-import { Command } from 'commander';
-import pageLoader from './index.js';
+import { Command } from 'commander'
+import pageLoader from './index.js'
 
 const runCli = () => {
-  const program = new Command();
+  const program = new Command()
 
   program
     .name('page-loader')
@@ -11,15 +11,15 @@ const runCli = () => {
     .action((url, options) => {
       pageLoader(url, options.output)
         .then((filepath) => {
-          console.log(`Page successfully saved to ${filepath}`);
+          console.log(`Page successfully saved to ${filepath}`)
         })
         .catch((error) => {
-          console.error(error.message);
-          process.exit(1);
-        });
-    });
+          console.error(error.message)
+          process.exit(1)
+        })
+    })
 
-  program.parse(process.argv);
-};
+  program.parse(process.argv)
+}
 
-export default runCli;
+export default runCli

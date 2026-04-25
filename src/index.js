@@ -1,3 +1,3 @@
-import loadPage from './loader.js';
+import loadPage from './loader.js'
 
-export default loadPage;
+export default loadPage
