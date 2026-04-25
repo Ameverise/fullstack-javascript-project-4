@@ -1,9 +1,16 @@
 import path from 'path';
 
-export const normalizeName = (url) => (
-  url.replace(/^https?:\/\//, '')
-    .replace(/[^a-zA-Z0-9]/g, '-')
-);
+export const getAssetFilename = (url) => {
+  const { hostname, pathname } = url;
+
+  const ext = path.extname(pathname) || '.html';
+
+  const name = `${hostname}${pathname}`
+    .replace(ext, '')
+    .replace(/[^a-zA-Z0-9]/g, '-');
+
+  return `${name}${ext}`;
+};
 
 export const getHtmlFilename = (url) => (
   `${normalizeName(url)}.html`
