@@ -46,7 +46,7 @@ return fs.access(outputDir)
       const promises = resources.map((resource) => {
         const assetUrl = resource.url.href;
 
-        const filename = getAssetFilename(resource.url.pathname);
+        const filename = getAssetFilename(resource.url);
 
         const filepath = path.join(assetsPath, filename);
 
